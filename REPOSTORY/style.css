@@ -1,0 +1,19 @@
+:root { --p: #2b4b8a; --bg: #f3f7fa; }
+body { font-family: 'Segoe UI', sans-serif; margin: 0; background: var(--bg); }
+
+header { background: white; padding: 10px 15px; display: flex; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+.main-logo { width: 35px; height: 35px; border-radius: 8px; margin-right: 10px; }
+.brand { font-size: 20px; font-weight: 800; color: var(--p); }
+.back-btn { font-size: 24px; cursor: pointer; color: var(--p); margin-right: 10px; }
+
+.page { display: none; padding: 20px; max-width: 480px; margin: auto; padding-bottom: 100px; }
+.active { display: block; }
+
+.card { background: white; padding: 20px; border-radius: 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); margin-bottom: 15px; }
+input, select { width: 100%; padding: 14px; margin: 10px 0; border: 1.5px solid #eee; border-radius: 12px; }
+.btn { width: 100%; padding: 16px; border: none; border-radius: 14px; font-weight: bold; cursor: pointer; }
+.btn-p { background: var(--p); color: white; }
+
+.nav-bottom { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); width: 85%; max-width: 380px; background: #2b4b8a; display: flex; justify-content: space-around; padding: 12px 0; border-radius: 22px; box-shadow: 0 8px 20px rgba(43,75,138,0.3); }
+.nav-item { text-align: center; color: rgba(255,255,255,0.5); flex: 1; cursor: pointer; }
+.nav-item.active-nav { color: white; }

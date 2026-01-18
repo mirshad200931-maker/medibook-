@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medi-Book OP - Mirshad</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.js"></script>
+    <script type="text/javascript">
+       (function(){ emailjs.init("TpP-_3tZvGyQIZTO"); })();
+    </script>
+</head>
+<body onload="checkProfile()">
+
+<header>
+    <div id="back-arrow" class="back-btn" onclick="goBack()" style="display:none">←</div>
+    <div class="logo-container">
+        <img src="assets/logo.png" alt="Logo" class="main-logo">
+        <span class="brand">Medi-Book OP</span>
+    </div>
+</header>
+
+<div id="home-page" class="page active">
+    <div class="card">
+        <h3>ബുക്കിംഗ് ആരംഭിക്കാം</h3>
+        <select id="dist" onchange="loadHospitals()">
+            <option value="">ജില്ല തിരഞ്ഞെടുക്കുക</option>
+            <option>മലപ്പുറം</option><option>കോഴിക്കോട്</option>
+        </select>
+    </div>
+    <div id="results"></div>
+</div>
+
+<div id="profile-page" class="page">
+    <div class="card" id="reg-box">
+        <h3>രോഗിയുടെ പ്രൊഫൈൽ</h3>
+        <input type="text" id="p-name" placeholder="പേര്">
+        <input type="tel" id="p-phone" placeholder="ഫോൺ നമ്പർ">
+        <button class="btn btn-p" onclick="sendOTP()">അടുത്ത ഘട്ടം</button>
+    </div>
+    <div class="card" id="otp-box" style="display:none">
+        <h3>വെരിഫിക്കേഷൻ (OTP: 1234)</h3>
+        <input type="number" id="otp-in" placeholder="Code">
+        <button class="btn btn-p" onclick="verifyOTP()">സേവ് ചെയ്യുക</button>
+    </div>
+</div>
+
+<div id="success-page" class="page" style="text-align: center;">
+    <div class="card">
+        <h1 style="color:#27ae60">✓</h1>
+        <h3>ടോക്കൺ നമ്പർ</h3>
+        <h2 id="tk-id" style="color:#2b4b8a">#0000</h2>
+        <button class="btn btn-p" onclick="goHome()">BACK TO HOME</button>
+    </div>
+</div>
+
+<nav class="nav-bottom">
+    <div class="nav-item active-nav" id="n-h" onclick="showPage('home-page')">🏠<small>Home</small></div>
+    <div class="nav-item" id="n-p" onclick="showPage('profile-page')">👤<small>Profile</small></div>
+</nav>
+
+<script src="script.js"></script>
+</body>
+</html>
